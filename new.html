@@ -1,0 +1,177 @@
+<html>
+
+<H1> Hebe&rsquo;s Web Page &copy; </H1>
+
+<h2> <B>LAB 3:</B> My first HTML website! </h2>
+
+<body>
+
+
+<p> Hello World! this is my first ever website using <FONT SIZE=5> html tool! </FONT>
+ </p> 
+<p>I love to paint and Thursday is my favorite day of the week.
+<br> My roommate Lynn is a CS major, and my friend Shane wants to be a CS major too.&clubs;
+<br>  </p> 
+ &hearts;  &hearts;  &hearts;  &hearts;  &hearts;  &hearts; I can not wait to show them my website, so excited! &hearts;  &hearts;  &hearts;  &hearts;  &hearts;  &hearts;
+
+<p> I am a freshman and this is my second semester and I live in Mead in the <I>MOSAIC</I>
+ LLC. I like <B>Mount Holyoke College!</B>
+ </p> 
+Welcome to <a HREF="https://mtholyoke.com/dalbino/mead.html"> <FONT COLOR="pink"> Mead Hall!</FONT>
+</a>
+And here is more informations on Mosaic: <a HREF="https://www.mtholyoke.edu/student-experience/living-campus/housing/living-learning-communities"> <FONT COLOR="pink">Living-learning community at MHC!</FONT></a>
+
+</p> 
+</p> 
+<table style="border: 3px dotted pink; width:50%;">
+  <tr>  
+    <th>My favorite color:</th>
+    <td>purple</td>
+    <td>blue</td>
+  </tr>
+  <tr>
+    <th>My favorite food:</th>
+    <td>pasta</td>
+    <td>cake</td>
+  </tr>
+  <tr>
+    <th>My favorite animal:</th>
+    <td>cat</td>
+    <td>dog</td>
+  </tr>
+</table>
+<p> 
+<p> 
+<p> 
+<p> 
+<B> World's biggest and smallest cat: </B>
+<p> 
+<p> 
+<img src="cat.jpeg" height="485"> 
+<img src="https://pbs.twimg.com/media/D7G3w22W4AAvReM.jpg"width="500" "height="340">
+<p> 
+<p> 
+<B> What would a big cat sound like?</B>
+<audio controls>
+    <source src="cat.wav" type="audio/mpeg">
+</audio>
+<p> 
+<p> 
+<B> What would a small cat sound like?</B>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dI_YBDegBFY?si=kS5mYbBFQrx-KKXm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<p> 
+<p>
+&hearts;  &hearts;  &hearts;  &hearts;  &hearts;  &hearts; Please answer this survey! &hearts;  &hearts;  &hearts;  &hearts;  &hearts;  &hearts;
+<p> 
+<p>
+<form>
+  <label for="fname">First and Last name:</label><br>
+  <input type="text" id="fname" name="fname"><br>
+  <label for="lname"> Big or Small cat? :</label><br>
+  <input type="text" id="lname" name="lname">
+  <input type="submit" value="Submit"><br>  
+</form>
+<p> 
+<p>
+
+  <div style="margin-left: auto; margin-right: auto; margin-top: 40px;
+    padding: 20px; width: 500px; font-size: 16px; font-family:'times new roman', sans-serif;">
+     <p  style="font: size 25px">&#128111; Hebe-Bot</p>
+   
+   <div style=" margin-top:6px; padding: 20px; background-color: #FFB6C1;
+   border: 4px solid #e73895; border-radius: 25px;">
+
+    <form name="chatForm">
+        <p id="botSays">What is your name ? </p>
+        <br>         
+        <input type="text" name="userInput" >
+        <input type="button" value="Send" onClick="displayFeedback(this.form)">
+
+    </form>
+   </div>
+   </div>  
+
+<script>
+
+var counter=0;
+var totalQuestions=5;
+
+var myGraduationYear= 2027;
+var myMajor= "international relations";
+
+//create a list of the majors you are/ were interested in
+var majorInterestedList=["politics", "asian studies" ];
+var favArtistsList=["frank ocean" ];
+
+var userName;
+
+    function displayFeedback(form) {
+
+        counter++;
+
+        var feedbackText="";
+        var newQuestionText="";
+
+        var userInput= form.userInput.value;
+
+        if (counter==1) {        
+            userName= userInput;
+            feedbackText="Hello, "+ userName+" ! " +"<br><br>Nice to meet you."+
+            " I am Hebe and I am a freshman at Mount Holyoke College.";
+
+            newQuestionText="Do you also go to Mount Holyoke College ?";             
+        }
+
+        if (counter==2) {        
+            feedbackText="Thanks for sharing."; 
+            newQuestionText="What is your major ?";              
+        }
+
+        if (counter==3) {     
+            if (userInput.toLowerCase()== myMajor) feedbackText="Great! I am also majoring in "+ userInput+"."; 
+            
+            else {
+                feedbackText=" "+userInput+" is so cool."+" I am majoring in "+myMajor;
+                
+                //check if user's major is one the majors in your majorInterestedList 
+                for (let i = 0; i < majorInterestedList.length; i++) {      
+                    if (userInput.toLowerCase() == majorInterestedList[i]) {
+                        feedbackText=userInput+ " was one of the majors I was looking at"+
+                        " I am now majoring in "+myMajor+".";
+                    }    
+                }
+        }
+
+        newQuestionText="When are you graduating ?"; 
+        }
+
+        if (counter==4) {     
+            if (userInput== myGraduationYear) feedbackText="I am also graduating the same year ! ";  
+            else if (userInput< myGraduationYear) feedbackText="Nice. You will be graduating earlier than me."; 
+            else if (userInput> myGraduationYear) feedbackText="Nice. I will be graduating in "+ myGraduationYear+", a bit later than you.";
+            else feedbackText="Thanks for sharing.";  
+        
+        newQuestionText="Do you have a favorite artists?"; 
+    }
+
+    if (counter==5) 
+        if (userInput.toLowerCase()== favArtistsList) feedbackText="Omg same, I love "+ userInput+"."; 
+        else {
+                feedbackText="I have heard of "+userInput+" , such a cool artist."+" My favorite artist is "+favArtistsList; 
+        }
+        
+        //if you have reached the last question
+        if (counter>=totalQuestions ) {
+            feedbackText=feedbackText+"<br><br>It was so nice talking to you, "+userName+"."+
+            "<br><br>hhI hope you have a great day!";           
+        }
+      
+        //update the feedback and clear the input box
+        document.getElementById("botSays").innerHTML = feedbackText+ "<br><br>"+newQuestionText;   
+        form.userInput.value=""; 
+    }
+
+</script>
+</body>
+
+</html>
